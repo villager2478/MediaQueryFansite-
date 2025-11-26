@@ -1,0 +1,287 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background: #050816;
+    color: #f5f5f5;
+}
+
+header {
+    grid-area: header;
+    padding: 1.5rem 1rem 0.5rem;
+}
+
+nav {
+    grid-area: nav;
+    padding: 0 1rem 1rem;
+}
+
+main {
+    grid-area: main;
+    padding: 0 1rem 1rem;
+}
+
+footer {
+    grid-area: footer;
+    padding: 1rem;
+    text-align: center;
+    background: #050b1f;
+    border-top: 1px solid #303a5a;
+    font-size: 0.9rem;
+}
+
+body.home {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "nav main"
+        "footer footer";
+}
+
+body.skins {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+}
+
+body.tips {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "nav nav"
+        "main aside"
+        "footer footer";
+}
+
+h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.tagline {
+    margin-top: 0.3rem;
+    color: #9ea9ff;
+    font-size: 0.95rem;
+}
+
+.main-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #e2e6ff;
+    padding: 0.4rem 0.6rem;
+    border-radius: 999px;
+    display: inline-block;
+    background: #10193b;
+}
+
+.main-nav a:hover {
+    background: #1b2a5c;
+}
+
+.intro-card,
+.mode-block,
+.stats-block,
+.join-card,
+.skins-intro,
+.card,
+.hero-text,
+.tip-box,
+.loadout-box,
+.settings-panel {
+    background: #0c1430;
+    padding: 1rem;
+    border-radius: 0.75rem;
+}
+
+.image-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+}
+
+.image-row img {
+    width: 100%;
+    border-radius: 0.75rem;
+}
+
+.modes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.stats-table,
+.style-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.stats-table th,
+.stats-table td,
+.style-table th,
+.style-table td {
+    border: 1px solid #303a5a;
+    padding: 0.4rem;
+    text-align: left;
+}
+
+.stats-table th,
+.style-table th {
+    background: #161f3c;
+}
+
+.squad-form,
+.settings-form {
+    display: grid;
+    gap: 0.5rem;
+}
+
+input,
+select {
+    margin-top: 0.2rem;
+    padding: 0.35rem;
+    border-radius: 0.4rem;
+    border: 1px solid #303a5a;
+    background: #050816;
+    color: #f5f5f5;
+}
+
+.button {
+    margin-top: 0.3rem;
+    padding: 0.5rem 0.9rem;
+    border-radius: 999px;
+    border: none;
+    background: #5865f2;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.button:hover {
+    background: #4752c4;
+}
+
+.skins-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.highlight-box {
+    margin-top: 0.6rem;
+    padding: 0.6rem;
+    border-radius: 0.5rem;
+    background: #1b2a5c;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.hero img {
+    width: 100%;
+    border-radius: 0.75rem;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.settings-panel {
+    grid-area: aside;
+    padding: 1rem;
+    background: #080f26;
+    border-left: 1px solid #303a5a;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.settings-image {
+    width: 100%;
+    border-radius: 0.75rem;
+}
+
+@media (max-width: 900px) {
+    body.home {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "footer";
+    }
+
+    .image-row {
+        grid-template-columns: 1fr;
+    }
+
+    .modes-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 800px) {
+    .skins-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    body.tips {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "aside"
+            "footer";
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+}
